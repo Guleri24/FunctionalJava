@@ -1,4 +1,4 @@
-package com.guleri.functionalBasic;
+package com.guleri.FunctionalBasic;
 
 import java.util.Arrays;
 import java.util.List;
