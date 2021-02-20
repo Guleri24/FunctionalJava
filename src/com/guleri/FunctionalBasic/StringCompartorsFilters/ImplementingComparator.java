@@ -66,6 +66,13 @@ public class ImplementingComparator {
                         .sorted(Comparator.comparing(Language::getName))
                         .collect(toList()));
 
+        language.stream()
+                .min(Language::yearDifference)
+                .ifPresent(oldest -> System.out.println("Oldest: " + oldest));
+
+        language.stream()
+                .max(Language::yearDifference)
+                .ifPresent(newest -> System.out.println("Newest: " + newest));
     }
 
     private static void printLanguage(final String message, List<Language> language) {
