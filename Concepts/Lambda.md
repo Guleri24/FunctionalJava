@@ -50,10 +50,10 @@
 
 ## Reduction:
 
-	* stream.reduce() method
-	* It is an identity element that is the starting value of reduction and
+* stream.reduce() method
+* It is an identity element that is the starting value of reduction and
 	default value if there are no elements in the stream.
-	* The method also consists of an 'accumulator' that takes as
+* The method also consists of an 'accumulator' that takes as
 	parameters, the partial result so far of the reduction, and the
 	next element in the stream.
 	
@@ -65,12 +65,12 @@ int total=nums.stream().reduce(0,(a,b)->a+b); // 0 is base value
 
 ## Filtering:
 
-	* stream.filter() method
-	* It takes a predicate as an argument and returns a new stream
-	containing the elements that matched the conditions of predicate.
-	* Each predicate can have multiple conditions that need to be 
+* stream.filter() method
+* It takes a predicate as an argument and returns a new stream
+	containing the elements that matched the conditions of predicate.	
+* Each predicate can have multiple conditions that need to be 
 	satisfied. 
-	* A lambda expression can be passed into stream.filter() method instead.
+* A lambda expression can be passed into stream.filter() method instead.
 
 	Example:
 
@@ -88,10 +88,10 @@ List<String> filtered = strList.stream()
 
 ### To List:
 
-    * Collector.toList() method
-    * The method takes all the elements that are left in a stream, and stores 
+* Collector.toList() method
+* The method takes all the elements that are left in a stream, and stores 
     them in a list. 
-    * This makes it quick and easy to create a new list, filtering out unwanted 
+* This makes it quick and easy to create a new list, filtering out unwanted 
     elements from the old list. 
 
     Example: Extracting all the numbers in a list that are greater than 5
@@ -104,12 +104,12 @@ List<Integer> above5=numberList.stream()
 
 ### Joining:
 
-    * joining() method
-    * The method is a terminal operation that created a non-stream result.
-    * Inside the stream.collect method, the joining() method returns a Collector
-    that concatenates all the elements in the stream.
-    * The joining() method can take a CharSequence as a parameter. 
-    * In that case a Collector is returned that concatenates the stream elements
+* joining() method
+* The method is a terminal operation that created a non-stream result.
+* Inside the stream.collect method, the joining() method returns a Collector
+    that concatenates all the elements in the stream. 
+* The joining() method can take a CharSequence as a parameter.
+* In that case a Collector is returned that concatenates the stream elements
     with the CharSequence separating each element.
 
     Example:
@@ -136,7 +136,7 @@ List<String> upperNames=names.stream()
 
 ## Passing In Functions and Predicates:
 
-    The `java.util.function` package can be used to pass in a Function or Predicate into a
+    The *java.util.function* package can be used to pass in a Function or Predicate into a
     stream's intermediate operations(s) to replace a lambda expression. Bith a Function and 
     Predicate can return true or false, allowing them to passed in to methods that need to
     evaluate a condition.
@@ -212,6 +212,27 @@ int counter=(int)nums.stream()
         .count();
 ```
 
+### let’s try to understand Java 8 functional interfaces which it provides in general:
+
+* Function:
+  
+      A function that accepts one argument type T and produces a result R.
+* BiFunction: 
+  
+      A function that accepts two arguments of type T and type U and produces a result R.
+* Supplier:
+  
+      A function that doesn't accept any argument but produces a result R.
+* Consumer: 
+      
+      A function that accepts one argument of type T and doesn’t produce any result.
+* Predicate: 
+    
+      A function that accepts one argument type T and produces a Boolean.
+* Operator: 
+    
+      A function that accepts arguments of type T and produces the same type result.
+
 # Conclusions:
 
     The addition of lambda expressions to Java8 provide for more functional, concise and readable coding.
@@ -225,3 +246,6 @@ int counter=(int)nums.stream()
   The 2015 International Conference on Software Engineering Research and Practice :>
   Performance of Lambda Expressions in Java 8 :
   http://worldcomp-proceedings.com/proc/p2015/SER2509.pdf
+  
+* Scala vs Java In Competitive Programming With Functional Programming:
+  https://shastri-shankar9.medium.com/scala-vs-java-in-competitive-programming-with-functional-programming-41c98506a935
